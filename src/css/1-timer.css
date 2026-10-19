@@ -1,0 +1,108 @@
+:root {
+  --bg: #f5f5f5;
+  --panel: #f5f5f5;
+  --input: #ffffff;
+  --text: #2e2f42;
+  --muted: #6c6c6c;
+  --primary: #4e75ff;
+  --primary-hover: #6f8cff;
+  --disabled: #b6b6b6;
+  --shadow: rgba(46, 47, 66, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+}
+
+.timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.timer-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+#datetime-picker {
+  width: 272px;
+  height: 40px;
+  border: 1px solid #c7c7c7;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--input);
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+#datetime-picker:focus {
+  outline: 2px solid rgba(78, 117, 255, 0.25);
+  border-color: var(--primary);
+}
+
+[data-start] {
+  width: 75px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+[data-start]:hover:not(:disabled),
+[data-start]:focus:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+[data-start]:disabled {
+  background: var(--disabled);
+  cursor: not-allowed;
+}
+
+.timer {
+  display: flex;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.value {
+  display: block;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.label {
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
